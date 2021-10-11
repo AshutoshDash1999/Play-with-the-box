@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play with Shape</title>
+    <style>
+        body{
+            background: url("bg.png") no-repeat;
+            background-size: cover;
+            margin: auto;
+            font-family: "monospace";
+        }
+        
+        .parameters, .cssValue {
+            background: #fff;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin: 1rem auto 1rem;
+            text-align: center;
+            width: 30%;
+        }
+        
+        label{
+            display: block;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: rgb(208, 187, 236);
+            border-radius: 10px;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+        border: 0px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            background-color: red;
+        }
+        
+        .boxContainer{
+            background: #fff;
+            border-radius: 0.5rem;
+            margin: 1.5rem auto;
+            padding: 2rem;
+            max-width: fit-content;
+        }
+        
+        #box{
+            height: 20vh;
+            width: 20vh;
+            margin: 0 auto;
+            background: #ff0077;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="parameters   containers">
+        <label for="#border-radius">Border Radius: </label>
+        <input class="input" type="range" name="" id="border-radius" min="0" max="100" value="10" oninput="showEffect()">
+
+        <label for="#chooseColor">Choose Color: </label>
+        <input class="input" type="color" id="chooseColor" value="#ff0077" oninput="showEffect()">
+
+        <label for="#padding">Padding: </label>
+        <input type="range" type="range" name="" id="padding" min="0" max="100" value="0" oninput="showEffect()">
+
+        <label for="#boxHeight">Box Height: </label>
+        <input type="range" type="range" name="" id="boxHeight" min="0" max="100" value="20" oninput="showEffect()">
+
+        <label for="#boxWidth">Box Width: </label>
+        <input type="range" type="range" name="" id="boxWidth" min="0" max="100" value="20" oninput="showEffect()">
+
+        
+    </div>
+    
+    <div class="cssValue  containers">
+        <h3><strong>CSS Value:</strong></h3>
+        <p id="cssValue"></p>
+    </div>
+    
+    <div class="boxContainer containers">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        rangeInput = document.querySelector("#border-radius");
+        colorInput = document.querySelector("#chooseColor");
+        paddingInput = document.querySelector("#padding");
+        boxHeight = document.querySelector("#boxHeight");
+        boxWidth = document.querySelector("#boxWidth");
+
+        box = document.querySelector("#box");
+
+        cssValue = document.querySelector("#cssValue");
+
+        
+        function showEffect(){
+            box.style.borderRadius = `${rangeInput.value}px`;
+            box.style.background = `${colorInput.value}`;
+            box.style.padding = `${paddingInput.value}px`;
+            box.style.height = `${boxHeight.value}rem`;
+            box.style.width = `${boxWidth.value}rem`;
+
+            cssValue.innerHTML = `border-radius: ${rangeInput.value}px;<br/> background:${colorInput.value}; <br/> padding:${paddingInput.value}px;<br/> height: ${boxHeight.value}vh;<br/> width: ${boxWidth.value}vh;<br/>`;
+        }
+
+    </script>
+    
+</body>
+</html>
