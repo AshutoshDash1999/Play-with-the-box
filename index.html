@@ -19,7 +19,7 @@
             padding: 0.5rem;
             margin: 1rem auto 1rem;
             text-align: center;
-            width: 30%;
+            width: 40%;
         }
         
         label{
@@ -49,8 +49,8 @@
         }
         
         #box{
-            height: 20vh;
-            width: 20vh;
+            height: 10rem;
+            width: 10rem;
             margin: 0 auto;
             background: #ff0077;
             border-radius: 10px;
@@ -70,10 +70,10 @@
         <input type="range" type="range" name="" id="padding" min="0" max="100" value="0" oninput="showEffect()">
 
         <label for="#boxHeight">Box Height: </label>
-        <input type="range" type="range" name="" id="boxHeight" min="0" max="100" value="20" oninput="showEffect()">
+        <input type="range" type="range" name="" id="boxHeight" min="0" max="100" value="10" oninput="showEffect()">
 
         <label for="#boxWidth">Box Width: </label>
-        <input type="range" type="range" name="" id="boxWidth" min="0" max="100" value="20" oninput="showEffect()">
+        <input type="range" type="range" name="" id="boxWidth" min="0" max="100" value="10" oninput="showEffect()">
 
         
     </div>
@@ -106,7 +106,7 @@
             box.style.height = `${boxHeight.value}rem`;
             box.style.width = `${boxWidth.value}rem`;
 
-            cssValue.innerHTML = `border-radius: ${rangeInput.value}px;<br/> background:${colorInput.value}; <br/> padding:${paddingInput.value}px;<br/> height: ${boxHeight.value}vh;<br/> width: ${boxWidth.value}vh;<br/>`;
+            cssValue.innerHTML = `border-radius: ${rangeInput.value}px;<br/> background:${colorInput.value}; <br/> padding:${paddingInput.value}px;<br/> height: ${boxHeight.value}rem;<br/> width: ${boxWidth.value}rem;<br/>`;
         }
 
     </script>
