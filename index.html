@@ -11,15 +11,21 @@
             background-size: cover;
             margin: auto;
             font-family: "monospace";
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
-        .parameters, .cssValue {
+        .containers {
             background: #fff;
             border-radius: 0.5rem;
-            padding: 0.5rem;
-            margin: 1rem auto 1rem;
+            padding: 1.5rem;
+            margin: 0.7rem auto 0.7rem;
             text-align: center;
             width: 40%;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.315);
         }
         
         label{
@@ -41,10 +47,6 @@
         }
         
         .boxContainer{
-            background: #fff;
-            border-radius: 0.5rem;
-            margin: 1.5rem auto;
-            padding: 2rem;
             max-width: fit-content;
         }
         
@@ -73,7 +75,7 @@
         <input type="range" type="range" name="" id="boxHeight" min="0" max="100" value="10" oninput="showEffect()">
 
         <label for="#boxWidth">Box Width: </label>
-        <input type="range" type="range" name="" id="boxWidth" min="0" max="100" value="10" oninput="showEffect()">
+        <input type="range" type="range" name="" id="boxWidth" min="0" max="50" value="10" oninput="showEffect()">
 
         
     </div>
